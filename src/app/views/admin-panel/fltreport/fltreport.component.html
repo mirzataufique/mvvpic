@@ -1,0 +1,80 @@
+<div class="container">
+    <h4>Faculty Report</h4>
+    <hr>
+    <div class="row">
+        <div id="fileds" class="col-sm-3">
+            <label for="EMT_Id" class="col-sm-8 col-form-label">Fiter By Id</label>
+            <div class="col-sm-12">
+                <input [(ngModel)]="std_id" type="text" (keyup)='search($event.target.value)' class="form-control"
+                    placeholder="Enter Student Id" name="std_id">
+            </div>
+            <!-- {{logedInUser.userEmail |json}} -->
+        </div>
+        <div id="fileds" class="col-sm-3">
+            <label for="EMT_Id" class="col-sm-8 col-form-label">Filter By Name</label>
+            <div class="col-sm-12">
+                <input [(ngModel)]="std_name" type="text" class="form-control" placeholder="Enter Student Name"
+                    name="std_email">
+            </div>
+        </div>
+        <div class="btnColl col-sm-2 form-control">
+            <button class="btn btn-primary" (click)="filter($event)">Filter</button>
+        </div>
+        <div class="btnColl col-sm-2 form-control">
+            <button class="btn btn-primary">Export</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div id="fileds" class="col-sm-10">
+            <p style="float:left"> Total Result: {{numerOfResult}}</p>
+        </div>
+        <div id="newAddbutton" class="col-sm-2">
+            <button (click)="movetoAddFaculty()" class="btn btn-primary">New Faculty</button>
+        </div>
+    </div>
+    <!-- data row -->
+    <div class="dataRow table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    
+                    <th>ID</th>
+                    <th>Actions</th>
+                    <th>User Email</th>
+                    <th>Usere Type</th>
+                    <th>Usere Photo</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <!-- {{Data[0]._id | json}} -->
+                <tr *ngFor="let data of userData">
+                 
+                    <td>{{data._id}}</td>
+                    <td><i class="fa fa-edit" style="font-size:25px;color:rgb(23, 98, 196);cursor: pointer;"> </i>
+                        <i class="fa fa-trash-o" (click)="delete(data)"
+                            style="font-size:25px;color:rgb(252, 55, 55);cursor: pointer; margin-left: 3px;">
+                        </i>
+                    </td>
+                    <td>{{data.userEmail}}</td>
+                    <td>{{data.userType}}</td>
+                    <td>{{data.userPhoto}}</td>
+
+                </tr>
+            </tbody>
+
+        </table>
+        <!-- Pagination -->
+        <!-- <template *ngIf="data.lenght < 0">
+            No result found
+        </template> -->
+
+    </div>
+    <div class="paginate text-right">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    <div>
+        <!-- {{AllData}} -->
+    </div>
+</div>

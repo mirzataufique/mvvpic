@@ -1,0 +1,25 @@
+<!-- <app-homepage 
+*ngIf="routes.url !=='/home' && routes.url !=='/login' &&
+    routes.url !=='/dashboard' && routes.url !=='/admission' &&
+    routes.url !=='/report' && routes.url !=='/faculty' &&
+    routes.url !=='/fcltreport'  && routes.url !=='/register'
+    
+"> -->
+<app-homepage 
+*ngIf="routes.url !=='/home' && routes.url !=='/login'
+    
+">
+</app-homepage>
+<!-- <app-dashboard *ngIf="routes.url !=='/home' && routes.url !=='/login' && 
+    routes.url !=='/dashboard'  && routes.url !=='/register' &&
+    routes.url !=='/about-college'  && routes.url !=='/about-staff' &&
+    routes.url !=='/galery'  && routes.url !=='/feedback' &&
+    routes.url !=='/principal-msg'  && routes.url !=='/mis-vission' &&
+    routes.url !=='/admission-details'  && routes.url !=='/exams' &&
+    routes.url !=='/results'  && routes.url !=='/feedback' &&
+    routes.url !=='/slids'
+
+    ">
+</app-dashboard> -->
+<router-outlet ></router-outlet>
+<app-footer *ngIf="routes.url !=='/login'  && routes.url !=='/register'"></app-footer>

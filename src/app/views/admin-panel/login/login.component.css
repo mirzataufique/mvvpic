@@ -1,0 +1,26 @@
+.form-container{
+   margin: 10px 0px 20px 0px;
+}
+.login-form{
+  background-color: #213d77;
+  height: auto;
+  width: 370px;
+  margin: auto;
+  padding: 20px;
+  border-radius: 8px;
+ 
+}
+.login-form, p2{
+  color: #FFFF;
+}
+/* .login-form, .Header-text{
+  color: rgb(233, 142, 5) !important;
+} */
+.inside-form .font_white{
+color: #ffff;
+}
+
+.login-form, .signup, p{
+  text-align: center;
+  margin-top: 8px;
+}

@@ -1,0 +1,7 @@
+{
+    "env":{
+        "JWT_KEY":"secret",
+        "MONGODB_URI":"mongodb+srv://mvvpicDb:mvvpicDb@123@mvvpic-cluster.ajuej.mongodb.net/<dbname>?retryWrites=true&w=majority&ssl=true",
+        "PORT" : 3000
+    }
+}

@@ -1,0 +1,85 @@
+<div class="form-container">
+  <!-- <button type="button" class="btn btn-link" click="history.back()">Back To Home</button> -->
+ 
+  <h2 class="Header-text text-center">Welcome to the Maharashi Valmiki Vidya Peeth Inter College</h2>
+  <p style="text-align: center; color: orangered;"><i>BhaisaTiker Sant Kabir Nagar UP- 272165.</i></p>
+  <div class="row login-form">
+        <form method="POST" [formGroup]="loginForm">
+          <div class="inside-form">
+            <h2 class="font_white text-center">LOG IN</h2>
+            <div class="row">
+              <div id="fileds" class="col-sm-12 form-group">
+                <select class="form-control" name="std_department" formControlName="userType" required>
+                  <option value="" selected>User Type</option>
+                  <option value="admin">Admin</option>
+                  <option value="faculty">Faculty</option>
+                </select>
+              </div>
+              <span style="margin: 0px 0px 9px 16px; color: red;" *ngIf="isValid('userType')">Invalid User Type</span>
+
+              <div id="fileds" class="col-sm-12 form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email..." formControlName="userEmail" required>
+              </div>
+              <span style="margin: 0px 0px 9px 16px; color: red;" *ngIf="isValid('userEmail')">Invalid User Email</span>
+              <div id="fileds" class="col-sm-12 form-group">
+                <input type="password" class="form-control" name="Password" placeholder="Password..." formControlName="userPassword" required>
+              </div>
+              <span style="margin: 0px 0px 9px 16px; color: red;" *ngIf="isValid('userPassword')">Invalid Password</span>
+
+                <div class="col-sm-12 submit form-group">
+                  <button class="btn  btn-primary" [disabled]="!loginForm.valid" (click)="logIn(loginForm.value)">Submit</button>
+                </div>
+                <div class="col-sm-6 signup form-group">
+                  <!-- <button class="btn  btn-primary" (click)="moveToRegiter()">Sign Up</button> -->
+                  <p style="text-align: center;">Don't have an account ?</p>
+                </div>
+                <div class="col-sm-6 signup form-group">
+                  <button type="button" class="btn btn-outline-primary" (click)="moveToRegiter()">Register Now</button>
+                </div>
+               <div  *ngIf="loaderService.isLoading | async" class="spinner">
+                 <div class="spinner-border text-success">{{msg}}</div>
+               </div>
+                <div *ngIf="responseMsg" class="alert alert-danger alert-dismissible">
+                  <strong>{{msg}}</strong> Failed
+                </div>
+            </div>
+            <!-- <div class="input-group">
+              <select class="select-class form-control" formControlName="userType">
+                <option default>Select User Type</option>
+                <option>Admin</option>
+                <option>Faculty</option>
+              </select>
+            </div> -->
+            <!-- <span *ngIf="isValid('userType')">Invalid User Type</span>
+            <div class="input-group">
+              <input type="email" class="form-control" formControlName="userEmail" name="text"
+                placeholder="Email Id...">
+            </div>
+           
+
+            <div class="input-group">
+              <input type="password" class="form-control" formControlName="userPassword" name="Password"
+                placeholder="Password...">
+            </div>
+            <span *ngIf="isValid('userPassword')">Invalid Password</span>
+
+            <div class="footer text-center">
+              <a (click)="logIn()" class="btn btn-neutral btn-round btn-lg">Login</a>
+            </div>
+            <p style="text-align: center;">Don't have an account ?</p>
+           <input type="checkbox" [value]="checked"> 
+            <div class="footer text-center">
+              <a (click)="moveToRegiter()" class="btn btn-neutral btn-round btn-lg">Register Now</a>
+            </div>
+            <div  *ngIf="loaderService.isLoading | async" class="spinner">
+              <div class="spinner-border text-success"></div>
+            </div>
+            <div *ngIf="responseMsg" class="alert alert-danger alert-dismissible">
+              <strong>{{msg}}</strong> Failed
+            </div> -->
+          </div>
+
+        </form>
+  </div>
+
+</div>

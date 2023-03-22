@@ -1,0 +1,50 @@
+<div class="row container">
+    <form method="post" [formGroup]="employeesForm">
+        <div  class="section-card" formArrayName="numOfForm" >
+            <div class="col-sm-12 form-group">
+                <label for="std_name" class="col-sm-8 col-form-label">Employee Id</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control"  name="std_name"
+                       formControlName="empId" placeholder="Enter the full name" required>
+                </div>
+            </div>
+           <div class="col-sm-12 form-group">
+                <label for="std_name" class="col-sm-8 col-form-label">Employee Name</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control"  name="std_name"
+                       formControlName="empName" placeholder="Enter the full name" required>
+                    
+                </div>
+            </div>
+              <div class="col-sm-12 form-group">
+                <label for="std_name" class="col-sm-8 col-form-label">Date Of Birth</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control"  name="std_name"
+                      formControlName="empDob"  placeholder="Enter the full name" required>
+                    
+                </div>
+            </div>
+            <div class="col-sm-12 form-group">
+                <label for="std_name" class="col-sm-8 col-form-label">Salary</label>
+                <div class="col-sm-12">
+                    <input type="text" class="form-control"  name="std_name"
+                      formControlName="empSal"  placeholder="Enter the full name" required>
+                    
+                </div>
+            </div>
+           
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <button class="btn btn-primary" (click)="submitData()">Submit</button>
+            </div>
+            <div class="col-sm-6">
+                <button class="btn btn-primary" (click)="adNewFrom()">Add More</button>
+            </div>
+        </div>
+        
+        
+    </form>
+
+
+</div>
